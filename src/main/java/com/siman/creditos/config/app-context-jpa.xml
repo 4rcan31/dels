@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:repository="http://www.springframework.org/schema/data/repository"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context 
+    	http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+    	http://www.springframework.org/schema/tool
+        http://www.springframework.org/schema/tool/spring-tool-4.0.xsd
+    	http://www.springframework.org/schema/tx 
+    	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    	http://www.springframework.org/schema/data/jpa 
+    	http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+        http://www.springframework.org/schema/data/repository
+        http://www.springframework.org/schema/data/repository/spring-repository.xsd
+        http://www.springframework.org/schema/mvc	
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <context:annotation-config />
+    
+     <jpa:repositories base-package="com.siman.creditos.repository.deals"
+         transaction-manager-ref="transactionManagerDealsdb"
+         entity-manager-factory-ref="entityManagerFactoryDealsdb" />
+
+     <tx:annotation-driven transaction-manager="transactionManagerDealsdb" />
+
+     <!-- DEALS DB  -->
+     <bean id="dataSourceDealsdb" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName" value="jdbc/DEALSDB" />
+     </bean>
+
+     <bean id="transactionManagerDealsdb" class="org.springframework.orm.jpa.JpaTransactionManager">
+         <property name="entityManagerFactory" ref="entityManagerFactoryDealsdb"></property>
+     </bean>
+
+
+     <bean id="entityManagerFactoryDealsdb" name="entityManagerDEALSDB"
+             class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="dealsdb" />
+        <property name="dataSource" ref="dataSourceDealsdb" />
+        <property name="persistenceXmlLocation"
+                value="classpath:com/siman/creditos/config/persistence.xml" />
+        <property name="jpaVendorAdapter">
+           <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+              <property name="showSql" value="false" />
+           </bean>
+        </property>
+        <property name="jpaPropertyMap">
+           <map>
+              <entry key="eclipselink.weaving" value="false" />
+              <entry key="eclipselink.logging.level" value="ALL" />
+              <entry key="eclipselink.cache.shared.default" value="false" />
+              <entry key="eclipselink.logging.level" value="FINE" />
+
+           </map>
+        </property>
+     </bean>
+
+    <jpa:repositories base-package="com.siman.creditos.repository.syssecur"
+                          transaction-manager-ref="transactionManagerSimanAdm"
+                          entity-manager-factory-ref="entityManagerFactorySimanAdm" />
+		
+    <jpa:repositories base-package="com.siman.creditos.repository.contratoparam"
+                          transaction-manager-ref="transactionManagerSunnelSV"
+                          entity-manager-factory-ref="entityManagerFactorySunnelSV" />
+
+
+    <tx:annotation-driven transaction-manager="transactionManagerSimanAdm" />
+
+    <!-- SIMANADM - SYSSECUR -->
+    <bean id="dataSourceSimanAdm" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/PRD_SIMANADM" />
+    </bean>
+
+    <bean id="transactionManagerSimanAdm" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactorySimanAdm"></property>
+    </bean>
+
+    <bean id="entityManagerFactorySimanAdm"
+              class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="simanadm" />
+        <property name="dataSource" ref="dataSourceSimanAdm" />
+        <property name="persistenceXmlLocation"
+                          value="classpath:com/siman/creditos/config/persistence.xml" />
+        <property name="jpaVendorAdapter">
+            <bean
+                class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+                <property name="showSql" value="false" />
+            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="eclipselink.weaving" value="false" />
+                <entry key="eclipselink.logging.level" value="SEVERE" />
+                <entry key="eclipselink.cache.shared.default" value="false" />                
+            </map>
+        </property>
+    </bean>
+	
+    <!-- SAR CREDAPPS -->
+    <jpa:repositories base-package="com.siman.creditos.repository.sar"
+                          transaction-manager-ref="transactionManagerSar"
+                          entity-manager-factory-ref="entityManagerFactorySar" />
+
+    <tx:annotation-driven transaction-manager="transactionManagerSar" />
+
+    <bean id="dataSourceSar" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/ORACLE_SAR_CREDAPPS" />
+    </bean>
+
+    <bean id="jdbcTemplateSar" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSourceSar" />
+    </bean>
+
+    <bean id="transactionManagerSar" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactorySar"></property>
+    </bean>
+
+    <bean id="entityManagerFactorySar"
+              class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="sardb" />
+        <property name="dataSource" ref="dataSourceSar" />
+        <property name="persistenceXmlLocation"
+                          value="classpath:com/siman/creditos/config/persistence.xml" />
+        <property name="jpaVendorAdapter">
+            <bean
+                class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+                <property name="showSql" value="false" />
+            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="eclipselink.weaving" value="false" />
+                <entry key="eclipselink.logging.level" value="SEVERE" />
+                <entry key="eclipselink.cache.shared.default" value="false" />
+            </map>
+        </property>
+    </bean>
+	
+    <!-- SUNNEL EL SALVADOR -->
+    <bean id="dataSourceSunnelSV" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/ORACLE_SUNNEL" />
+    </bean>
+
+    <bean id="transactionManagerSunnelSV" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactorySunnelSV"></property>
+    </bean>
+	
+	
+
+    <bean id="entityManagerFactorySunnelSV"
+              class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="sunnel" />
+        <property name="dataSource" ref="dataSourceSunnelSV" />
+        <property name="persistenceXmlLocation"
+                          value="classpath:com/siman/creditos/config/persistence.xml" />
+        <property name="jpaVendorAdapter">
+            <bean
+                class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+                <property name="showSql" value="false" />
+            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="eclipselink.weaving" value="false" />
+                <entry key="eclipselink.logging.level" value="SEVERE" />
+                <entry key="eclipselink.cache.shared.default" value="false" />                
+            </map>
+        </property>
+    </bean>	
+        
+    <!-- SIMANWAS - CREDINTER -->
+		
+    <jpa:repositories base-package="com.siman.creditos.repository.was"
+                                  transaction-manager-ref="transactionManagerSimanWas"
+                                  entity-manager-factory-ref="entityManagerFactorySimanWas" />
+
+    <tx:annotation-driven transaction-manager="transactionManagerSimanWas" />
+
+    <bean id="dataSourceSimanWas" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/PRD_SIMANWAS" />
+    </bean>
+	
+    <bean id="transactionManagerSimanWas" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactorySimanWas"></property>
+    </bean>
+
+    <bean id="entityManagerFactorySimanWas"
+              class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="simanwas" />
+        <property name="dataSource" ref="dataSourceSimanWas" />
+        <property name="persistenceXmlLocation"
+                          value="classpath:com/siman/creditos/config/persistence.xml" />
+        <property name="jpaVendorAdapter">
+            <bean
+                class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+                <property name="showSql" value="false" />
+            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="eclipselink.weaving" value="false" />
+                <entry key="eclipselink.logging.level" value="SEVERE" />
+                <entry key="eclipselink.cache.shared.default" value="false" />
+                
+            </map>
+        </property>
+    </bean>
+    
+	<bean id="jdbcTemplateSimasWas"  class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceSimanWas" />
+	</bean>
+        <!-- SIMANWAS - STAGING -->
+
+        <jpa:repositories base-package="com.siman.creditos.repository.staging"
+                    transaction-manager-ref="transactionManagerStaging"
+                    entity-manager-factory-ref="entityManagerFactoryStaging" />
+
+
+            <tx:annotation-driven transaction-manager="transactionManagerStaging" />
+
+            <!-- Staging -->
+            <bean id="dataSourceStaging" class="org.springframework.jndi.JndiObjectFactoryBean">
+                    <property name="jndiName" value="jdbc/ORACLE_STAGING" />
+            </bean>
+
+            <bean id="transactionManagerStaging" class="org.springframework.orm.jpa.JpaTransactionManager">
+                    <property name="entityManagerFactory" ref="entityManagerFactoryStaging"></property>
+            </bean>
+
+
+            <bean id="entityManagerFactoryStaging" name="entityManagerSTAGING"
+                    class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+                    <property name="persistenceUnitName" value="staging" />
+                    <property name="dataSource" ref="dataSourceStaging" />
+                    <property name="persistenceXmlLocation"
+                            value="classpath:com/siman/creditos/config/persistence.xml" />
+                    <property name="jpaVendorAdapter">
+                            <bean
+                                    class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+                                    <property name="showSql" value="false" />
+                            </bean>
+                    </property>
+                    <property name="jpaPropertyMap">
+                            <map>
+                                    <entry key="eclipselink.weaving" value="false" />
+                                    <entry key="eclipselink.logging.level" value="ALL" />
+                                    <entry key="eclipselink.cache.shared.default" value="false" />
+                                    <entry key="eclipselink.logging.level" value="FINE" />
+
+                            </map>
+                    </property>
+            </bean>
+			<!-- ORION CREDAPPS -->
+			
+			<!-- 
+			<jpa:repositories base-package="com.siman.creditos.repository.orion.interfaces"
+				transaction-manager-ref="transactionManagerOrion"
+				entity-manager-factory-ref="entityManagerFactoryOrion" />
+
+			<tx:annotation-driven transaction-manager="transactionManagerOrion" />
+
+			<bean id="dataSourceOrion" class="org.springframework.jndi.JndiObjectFactoryBean">
+				<property name="jndiName" value="jdbc/ORIONREPOSV" />
+			</bean>
+
+			<bean id="jdbcTemplateOrion" class="org.springframework.jdbc.core.JdbcTemplate">
+				<property name="dataSource" ref="dataSourceOrion" />
+			</bean>
+
+			<bean id="transactionManagerOrion" class="org.springframework.orm.jpa.JpaTransactionManager">
+				<property name="entityManagerFactory" ref="entityManagerFactoryOrion"></property>
+			</bean>
+
+			<bean id="entityManagerFactoryOrion"
+				class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+				<property name="persistenceUnitName" value="oriondb" />
+				<property name="dataSource" ref="dataSourceOrion" />
+				<property name="persistenceXmlLocation"
+					value="classpath:com/siman/creditos/config/persistence.xml" />
+				<property name="jpaVendorAdapter">
+					<bean
+						class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+						<property name="showSql" value="false" />
+					</bean>
+				</property>
+				<property name="jpaPropertyMap">
+					<map>
+						<entry key="eclipselink.weaving" value="false" />
+						<entry key="eclipselink.logging.level" value="SEVERE" />
+						<entry key="eclipselink.cache.shared.default" value="false" />
+					</map>
+				</property>
+			</bean>
+			 -->
+			 
+			<!-- Inicia Configuracion de conexiones para MIGORAT -->
+			<tx:annotation-driven transaction-manager="transactionManagerMigorat" />
+
+			<jpa:repositories base-package="com.siman.creditos.repository.migorat"
+				transaction-manager-ref="transactionManagerMigorat"
+				entity-manager-factory-ref="entityManagerFactoryMigorat" />
+
+			<bean id="dataSourceMigorat" class="org.springframework.jndi.JndiObjectFactoryBean">
+				<property name="jndiName" value="jdbc/ORACLE_MIGORAT"/>
+			</bean>
+
+			<bean id="transactionManagerMigorat" class="org.springframework.orm.jpa.JpaTransactionManager">
+				<property name="entityManagerFactory" ref="entityManagerFactoryMigorat"></property>
+			</bean>
+
+			<bean id="entityManagerFactoryMigorat"
+				class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+				<property name="persistenceUnitName" value="migorat" />
+				<property name="dataSource" ref="dataSourceMigorat" />
+				<property name="persistenceXmlLocation"
+					value="classpath:com/siman/creditos/config/persistence.xml" />
+				<property name="jpaVendorAdapter">
+					<bean
+						class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+						<property name="showSql" value="false" />
+					</bean>
+				</property>
+				<property name="jpaPropertyMap">
+					<map>
+						<entry key="eclipselink.weaving" value="false" />
+						<entry key="eclipselink.logging.level" value="SEVERE" />
+						<entry key="eclipselink.cache.shared.default" value="false" />
+						<entry key="eclipselink.jdbc.batch-writing.size" value="1000" />
+					</map>
+				</property>
+			</bean>
+
+			<bean id="jdbcTemplateMigorat" class="org.springframework.jdbc.core.JdbcTemplate">
+				<property name="dataSource" ref="dataSourceMigorat" />
+			</bean>
+			
+</beans>

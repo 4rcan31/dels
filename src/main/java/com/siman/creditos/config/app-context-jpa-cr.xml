@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:repository="http://www.springframework.org/schema/data/repository"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context 
+    	http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+    	http://www.springframework.org/schema/tool
+        http://www.springframework.org/schema/tool/spring-tool-4.0.xsd
+    	http://www.springframework.org/schema/tx 
+    	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    	http://www.springframework.org/schema/data/jpa 
+    	http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+        http://www.springframework.org/schema/data/repository
+        http://www.springframework.org/schema/data/repository/spring-repository.xsd
+        http://www.springframework.org/schema/mvc	
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<context:annotation-config />
+
+	<jpa:repositories base-package="com.siman.creditos.repository.arca"
+		transaction-manager-ref="transactionManagerSunnelCR"
+		entity-manager-factory-ref="entityManagerFactorySunnelCR" />
+	<jpa:repositories base-package="com.siman.creditos.repository.sunnel"
+		transaction-manager-ref="transactionManagerSunnelCR"
+		entity-manager-factory-ref="entityManagerFactorySunnelCR" />
+	<jpa:repositories base-package="com.siman.creditos.repository.simac"
+		transaction-manager-ref="transactionManagerSunnelCR"
+		entity-manager-factory-ref="entityManagerFactorySunnelCR" />
+	<jpa:repositories base-package="com.siman.creditos.repository.reservas"
+		transaction-manager-ref="transactionManagerSunnelCR"
+		entity-manager-factory-ref="entityManagerFactorySunnelCR" />
+	<jpa:repositories base-package="com.siman.creditos.repository.pic"
+		transaction-manager-ref="transactionManagerSunnelCR"
+		entity-manager-factory-ref="entityManagerFactorySunnelCR"/>
+	<jpa:repositories base-package="com.siman.creditos.repository.credisiman.campaign"
+		transaction-manager-ref="transactionManagerSunnelCR"
+		entity-manager-factory-ref="entityManagerFactorySunnelCR" />
+		
+	<tx:annotation-driven transaction-manager="transactionManagerSunnelCR" />
+
+	<!-- SUNNEL CR -->
+	<bean id="dataSourceSunnelCR" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="jdbc/ORACLE_SUNNELCR" />
+	</bean>
+
+	<bean id="transactionManagerSunnelCR" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactorySunnelCR"></property>
+	</bean>
+	
+
+	<bean id="entityManagerFactorySunnelCR" name="entityManagerPREA"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="sunnelCR" />
+		<property name="dataSource" ref="dataSourceSunnelCR" />
+		<property name="persistenceXmlLocation"
+			value="classpath:com/siman/creditos/config/persistence.xml" />
+		<property name="jpaVendorAdapter">
+			<bean
+				class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+				<property name="showSql" value="false" />
+			</bean>
+		</property>
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="eclipselink.weaving" value="false" />
+				<entry key="eclipselink.logging.level" value="ALL" />
+				<entry key="eclipselink.cache.shared.default" value="false" />
+				<entry key="eclipselink.logging.level" value="FINE" />
+				
+			</map>
+		</property>
+	</bean>
+	<!--  
+	<bean id="jdbcTemplatePreAprobados"  class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceSunnelCR" />
+	</bean>-->
+	
+	<!-- Inicia Configuracion de conexiones para PRE APROBADOS --> 	
+	<!-- <tx:annotation-driven transaction-manager="transactionManagerPreaprobados" />
+	
+	<jpa:repositories base-package="com.siman.creditos.repository.preaprobados"
+		transaction-manager-ref="transactionManagerPreaprobados"
+		entity-manager-factory-ref="entityManagerFactoryPreaprobados" />
+		
+	<bean id="dataSourceSunnelPreaprobados" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="jdbc/ORA_SUNNELCR_PREA" />
+	</bean>
+	
+	<bean id="transactionManagerPreaprobados" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactoryPreaprobados"></property>
+	</bean>
+	
+	<bean id="entityManagerFactoryPreaprobados" 
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="sunnelCRPreAprobados" />
+		<property name="dataSource" ref="dataSourceSunnelPreaprobados" />
+		<property name="persistenceXmlLocation"
+			value="classpath:com/siman/creditos/config/persistence.xml" />
+		<property name="jpaVendorAdapter">
+			<bean
+				class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+				<property name="showSql" value="false" />
+			</bean>
+		</property>
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="eclipselink.weaving" value="false" />
+				<entry key="eclipselink.logging.level" value="SEVERE" />
+				<entry key="eclipselink.cache.shared.default" value="false" />
+				<entry key="eclipselink.jdbc.batch-writing.size" value="1000"/>
+			</map>
+		</property>
+	</bean>
+		
+	<bean id="jdbcTemplatePreAprobados"  class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceSunnelPreaprobados" />
+	</bean>	 -->
+	
+	<!-- ORION CREDAPPS -->
+		<jpa:repositories base-package="com.siman.creditos.repository.orion.interfaces"
+		transaction-manager-ref="transactionManagerOrion"
+			entity-manager-factory-ref="entityManagerFactoryOrion" />
+		
+		<jpa:repositories base-package="com.siman.creditos.repository.orion.orionrepo"
+		transaction-manager-ref="transactionManagerOrion"
+			entity-manager-factory-ref="entityManagerFactoryOrion" />
+		
+		<jpa:repositories base-package="com.siman.creditos.repository.orion.visor"
+				  transaction-manager-ref="transactionManagerOrion"
+				  entity-manager-factory-ref="entityManagerFactoryOrion" />
+
+		<jpa:repositories base-package="com.siman.creditos.repository.orion.configuracionescorreo"
+			transaction-manager-ref="transactionManagerOrion"
+			entity-manager-factory-ref="entityManagerFactoryOrion"/>
+
+		<tx:annotation-driven transaction-manager="transactionManagerOrion" />
+
+		<bean id="dataSourceOrion" class="org.springframework.jndi.JndiObjectFactoryBean">
+			<property name="jndiName" value="jdbc/ORIONREPOCR" />
+		</bean>
+
+		<bean id="jdbcTemplateOrion" class="org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref="dataSourceOrion" />
+		</bean>
+
+		<bean id="transactionManagerOrion" class="org.springframework.orm.jpa.JpaTransactionManager">
+			<property name="entityManagerFactory" ref="entityManagerFactoryOrion"></property>
+		</bean>
+
+		<bean id="entityManagerFactoryOrion"
+			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+			<property name="persistenceUnitName" value="oriondbcr" />
+			<property name="dataSource" ref="dataSourceOrion" />
+			<property name="persistenceXmlLocation"
+				value="classpath:com/siman/creditos/config/persistence.xml" />
+			<property name="jpaVendorAdapter">
+				<bean
+					class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+					<property name="showSql" value="false" />
+				</bean>
+			</property>
+			<property name="jpaPropertyMap">
+				<map>
+					<entry key="eclipselink.weaving" value="false" />
+					<entry key="eclipselink.logging.level" value="SEVERE" />
+					<entry key="eclipselink.cache.shared.default" value="false" />
+				</map>
+			</property>
+		</bean>
+	
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="com.siman.creditos_CredApps_war_1.6.4PU" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/ORACLE_STAGING_INTEGRA</jta-data-source>
+    <class>com.siman.creditos.entity.integracion.McColor</class>
+    <class>com.siman.creditos.entity.integracion.McBanda</class>
+    <class>com.siman.creditos.entity.integracion.McEstrategia</class>
+    <class>com.siman.creditos.entity.integracion.McRango</class>
+    <class>com.siman.creditos.entity.integracion.McProbCliente</class>
+    <class>com.siman.creditos.entity.integracion.McParametros</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties/>
+  </persistence-unit>
+</persistence>-->

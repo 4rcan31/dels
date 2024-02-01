@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="dealsdb" transaction-type="RESOURCE_LOCAL">
+	    <!-- <class>com.siman.creditos.entity.syssecur.TUser</class> -->
+	    <class>com.siman.creditos.entity.Role</class>
+	</persistence-unit>
+	
+	<persistence-unit name="simanadm" transaction-type="RESOURCE_LOCAL">
+	    <class>com.siman.creditos.entity.syssecur.PGeoGrpStoreProf</class>
+	    <class>com.siman.creditos.entity.syssecur.PGeoGrpStoreProfPK</class>
+	    <class>com.siman.creditos.entity.syssecur.PProfStoreModOpt</class>
+	    <class>com.siman.creditos.entity.syssecur.PProfStoreModOptPK</class>
+	    <class>com.siman.creditos.entity.syssecur.TChain</class>
+	    <class>com.siman.creditos.entity.syssecur.TChainPK</class>
+	    <class>com.siman.creditos.entity.syssecur.TCorporation</class>
+	    <class>com.siman.creditos.entity.syssecur.TCountry</class>
+	    <class>com.siman.creditos.entity.syssecur.TCountryPK</class>
+	    <class>com.siman.creditos.entity.syssecur.TGeoGrp</class>
+	    <class>com.siman.creditos.entity.syssecur.TModule</class>
+	    <class>com.siman.creditos.entity.syssecur.TOption</class>
+	    <class>com.siman.creditos.entity.syssecur.TOptionPK</class>
+	    <class>com.siman.creditos.entity.syssecur.TProfile</class>
+	    <class>com.siman.creditos.entity.syssecur.TStore</class>
+	    <class>com.siman.creditos.entity.syssecur.TStorePK</class>
+	    <class>com.siman.creditos.entity.syssecur.TUser</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	</persistence-unit>
+        
+	<persistence-unit name="simanwas" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.was.MassInscription</class>
+		<class>com.siman.creditos.entity.was.MassInscriptionItem</class>
+		<class>com.siman.creditos.entity.was.Usuarios</class>
+		<class>com.siman.creditos.entity.was.UsuariosPK</class>
+	</persistence-unit>
+
+	<persistence-unit name="sardb" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.sar.StgCadena</class>
+		<class>com.siman.creditos.entity.sar.StgCadenaPk</class>
+		<class>com.siman.creditos.entity.sar.StgTienda</class>
+		<class>com.siman.creditos.entity.sar.TLnAudLog</class>
+		<class>com.siman.creditos.entity.sar.TLnCountry</class>
+		<class>com.siman.creditos.entity.sar.TLnEvento</class>
+		<class>com.siman.creditos.entity.sar.TLnPersona</class>
+		<class>com.siman.creditos.entity.sar.TLnTipoCaso</class>
+		<class>com.siman.creditos.entity.sar.TLnTipoDocumento</class>
+		<class>com.siman.creditos.entity.sar.TNcConfEnvio</class>
+		<class>com.siman.creditos.entity.sar.TNcPlantilla</class>
+	</persistence-unit>
+
+	<persistence-unit name="sunnel" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.simac.TConFirmantes</class>
+		<class>com.siman.creditos.entity.simac.TGstate</class>
+		<class>com.siman.creditos.entity.simac.TMunicipios</class>
+
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+        <class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+ 		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<!--GESTION PARA EMITIR PLANTILLA PIC DE NICARAGUA -->
+		<class>com.siman.creditos.entity.pic.TIsimviewprofilecustomer</class>
+		<class>com.siman.creditos.entity.pic.TIsimcustomerprofile</class>
+		
+		<!-- Clases campañas notificaciones automáticas INICIO -->
+		<class>com.siman.creditos.entity.credisiman.campaign.Campain</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotification</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationNoEntregada</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificacionBienvenidaCliente</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadOne</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadTwo</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificationDeneCond</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.EmailTemplate</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignParam</class>
+		<!-- Clases campañas notificaciones automáticas FIN -->
+
+		
+	</persistence-unit>
+
+	<persistence-unit name="sararca" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.simac.TConFirmantes</class>
+
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvBranch</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<!--GESTION PARA EMITIR PLANTILLA PIC DE NICARAGUA -->
+		<class>com.siman.creditos.entity.pic.TIsimviewprofilecustomer</class>
+		<class>com.siman.creditos.entity.pic.TIsimcustomerprofile</class>
+		
+		<!-- Clases campañas notificaciones automáticas INICIO -->
+		<class>com.siman.creditos.entity.credisiman.campaign.Campain</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotification</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationNoEntregada</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificacionBienvenidaCliente</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadOne</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadTwo</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificationDeneCond</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.EmailTemplate</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignParam</class>
+		<!-- Clases campañas notificaciones automáticas FIN -->
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="sunnelGT" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvBranch</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<!--GESTION PARA EMITIR PLANTILLA PIC DE NICARAGUA -->
+		<class>com.siman.creditos.entity.pic.TIsimviewprofilecustomer</class>
+		<class>com.siman.creditos.entity.pic.TIsimcustomerprofile</class>
+		
+		<!-- Clases campañas notificaciones automáticas INICIO -->
+		<class>com.siman.creditos.entity.credisiman.campaign.Campain</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotification</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationNoEntregada</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificacionBienvenidaCliente</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadOne</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadTwo</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificationDeneCond</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.EmailTemplate</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignParam</class>
+		<!-- Clases campañas notificaciones automáticas FIN -->
+		
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="sunnelNI" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvBranch</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<!--GESTION PARA EMITIR PLANTILLA PIC DE NICARAGUA -->
+		<class>com.siman.creditos.entity.pic.TIsimviewprofilecustomer</class>
+		<class>com.siman.creditos.entity.pic.TIsimcustomerprofile</class>
+		
+		<!-- Clases campañas notificaciones automáticas INICIO -->
+		<class>com.siman.creditos.entity.credisiman.campaign.Campain</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotification</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationNoEntregada</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificacionBienvenidaCliente</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadOne</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadTwo</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificationDeneCond</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.EmailTemplate</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignParam</class>
+		<!-- Clases campañas notificaciones automáticas FIN -->
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="sunnelCR" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvBranch</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<!--GESTION PARA EMITIR PLANTILLA PIC DE NICARAGUA -->
+		<class>com.siman.creditos.entity.pic.TIsimviewprofilecustomer</class>
+		<class>com.siman.creditos.entity.pic.TIsimcustomerprofile</class>
+		
+		<!-- Clases campañas notificaciones automáticas INICIO -->
+		<class>com.siman.creditos.entity.credisiman.campaign.Campain</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotification</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationNoEntregada</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificacionBienvenidaCliente</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadOne</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaingNotificationInactividadTwo</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignNotificationDeneCond</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.EmailTemplate</class>
+		<class>com.siman.creditos.entity.credisiman.campaign.CampaignParam</class>
+		<!-- Clases campañas notificaciones automáticas FIN -->
+		
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+        
+    <persistence-unit name="staging" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.integracion.McBanda</class>
+		<class>com.siman.creditos.entity.integracion.McBandaAudit</class>
+		<class>com.siman.creditos.entity.integracion.McCadena</class>
+		<class>com.siman.creditos.entity.integracion.McColor</class>
+		<class>com.siman.creditos.entity.integracion.McEdadMora</class>
+		<class>com.siman.creditos.entity.integracion.McEstrategia</class>
+		<class>com.siman.creditos.entity.integracion.McFiltro</class>
+		<class>com.siman.creditos.entity.integracion.McFormula</class>
+		<class>com.siman.creditos.entity.integracion.McFormulaPK</class>
+		<class>com.siman.creditos.entity.integracion.McInformacionCliente</class>
+		<class>com.siman.creditos.entity.integracion.McPais</class>
+		<class>com.siman.creditos.entity.integracion.McParametrizacion</class>
+		<class>com.siman.creditos.entity.integracion.McInformacionClientePK</class>
+		<class>com.siman.creditos.entity.integracion.McParametros</class>
+		<class>com.siman.creditos.entity.integracion.McProbCliente</class>
+		<class>com.siman.creditos.entity.integracion.McProducto</class>
+		<class>com.siman.creditos.entity.integracion.McRango</class>
+		<class>com.siman.creditos.entity.integracion.McRangoAudit</class>
+		<class>com.siman.creditos.entity.integracion.McVariable</class>
+		<class>com.siman.creditos.entity.integracion.McVariableAudit</class>
+		<class>com.siman.creditos.entity.orion.TCbranchoffices</class>	
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+        
+	<persistence-unit name="stgcreditos" transaction-type="RESOURCE_LOCAL">
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<!--  PRE APROBADOS -->
+	<persistence-unit name="sararcaPreAprobados" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.simac.TConFirmantes</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="sunnelGTPreAprobados" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.simac.TConFirmantes</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="sunnelNIPreAprobados" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.simac.TConFirmantes</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="sunnelCRPreAprobados" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.contratoparam.TParamContrato</class>
+		<class>com.siman.creditos.entity.credisiman.TIsicreditLine</class>
+		<class>com.siman.creditos.entity.credisiman.TIsiformalization</class>
+		<class>com.siman.creditos.entity.credisiman.TIsischemas</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineErrors</class>
+		<class>com.siman.creditos.entity.simac.TIsicreditLineTemp</class>
+		<class>com.siman.creditos.entity.simac.TIsimUserHermes</class>
+		<class>com.siman.creditos.entity.simac.VCustomerInfo</class>
+		<class>com.siman.creditos.entity.simac.TConFirmantes</class>
+		<class>com.siman.creditos.entity.inscripcionmasiva.TIsimCourierDeactivation</class>
+		<class>com.siman.creditos.entity.sunnel.Pagos</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccount</class>
+		<class>com.siman.creditos.entity.sunnel.TGaccountprofile</class>
+		<class>com.siman.creditos.entity.sunnel.TGcard</class>
+		<class>com.siman.creditos.entity.sunnel.TGcollector</class>
+		<class>com.siman.creditos.entity.sunnel.TGcustomer</class>
+		<class>com.siman.creditos.entity.sunnel.TGentityemployee</class>
+		<class>com.siman.creditos.entity.sunnel.TGinitsetupparameter</class>
+		<class>com.siman.creditos.entity.sunnel.TGstatementpromotionmsg</class>
+		<class>com.siman.creditos.entity.sunnel.MuniDepa</class>
+		<class>com.siman.creditos.entity.reservas.TGBranch</class>
+		<class>com.siman.creditos.entity.reservas.TGfinancingScheme</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvStatus</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrx</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHist</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvTrxHistPK</class>
+		<class>com.siman.creditos.entity.reservas.TIsimResrvPK</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimBitacoraCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimCarga</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimLogError</class>
+		<class>com.siman.creditos.entity.preaprobados.TIsimTipoCampana</class>
+		<class>com.siman.creditos.entity.preaprobados.TISimTipoError</class>
+		<class>com.siman.creditos.entity.sunnel.TGcreditline</class>
+		<class>com.siman.creditos.entity.sunnel.TGCollectionManagmentCrline</class>
+		
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetail</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailPk</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomersWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TGAPPDocumentType</class>
+		<class>com.siman.creditos.entity.orion.TIsimCustomerWaveDetailHist</class>
+		<class>com.siman.creditos.entity.orion.TIsimCreditProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveAdi</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveRevAndPVA</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseAcceptanceStatus</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseBranchAuth</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseError</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseNonAcceptanceCriteria</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseParams</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseProductType</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseSunnelProductAuthorized</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWave</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveDetHis</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoad</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadDet</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrorEmail</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadErrs</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWaveLoadFile</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseWorkflowWhiteList</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseRevolvingandpva</class>
+		<class>com.siman.creditos.entity.orion.TIsimMigraseDocPathCon</class>
+		
+		
+		<!-- Clases de cargos y abonos automaticos start -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCadena</class>															  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCatPais</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaProveedor</class>																	
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoMaestro</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaConfArchivoDetalle</class>																 
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoEncabezado</class>															
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoAutoDetalle</class>																		  
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaMaestroTipoCarga</class>
+		<!-- Clases de cargos y abonos automaticos end -->
+		
+		<!-- Clases planes de financiamiento -->
+		<class>com.siman.creditos.entity.sunnel.TisimFschm</class>
+		
+		
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="abonosCta" transaction-type="RESOURCE_LOCAL">
+	   <class>com.siman.creditos.entity.orion.abonos.TIsimCustomerPaymentsTrx</class>
+	   <class>com.siman.creditos.entity.orion.abonos.TIsimCustomerPaymentsErrors</class>
+	   <class>com.siman.creditos.entity.orion.abonos.TIsimCustomerPaymentsParams</class>
+	   <class>com.siman.creditos.entity.orion.abonos.TISimBranchPaymentsSucursal</class>
+	</persistence-unit>
+	
+	<persistence-unit name="oriondb" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.orion.entities.TNcGestionPin</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcBranchOffices</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcGenSettings</class>	
+		<class>com.siman.creditos.entity.orion.entities.TNcBranchManagers</class>	
+		<class>com.siman.creditos.entity.orion.planesPago.TCtproduct</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TPlan</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TPlansProduct</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TRelocatedPayment</class>	
+		<class>com.siman.creditos.entity.orion.planesPago.TCbranchoffice</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TGenSetting</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TIsimcustomerpaymentsParam</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCclienttype</class>	
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCmaritalstatusMG</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCnationality</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCprofessionsMG</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCtransaction</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCstatuscard</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCstatusaccount</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCtproClientInterestrate</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCzona</class>	
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCregion</class>	
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCsector</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCidentificationtypeGen</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCbranchofficeGen</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCpva</class>
+        <class>com.siman.creditos.entity.orion.mttoGenerales.TCscurrency</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCsfranchise</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TReplacementReason</class>		
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCtipoTransaccionAutorizacion</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCpais</class>	
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCEstadoAutorizacion</class>		
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCRangoedades</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCmcc</class>
+		<class>com.siman.creditos.entity.orion.TCbranchoffices</class>
+		<class>com.siman.creditos.entity.orion.TCprofessions</class>
+		<class>com.siman.creditos.entity.orion.TSaccountfileS3utra</class>
+		<class>com.siman.creditos.entity.orion.TSaccountstatementSgbtra</class>
+		<class>com.siman.creditos.entity.orion.TSpersonfiscalrepT5mmae</class>
+		<class>com.siman.creditos.entity.orion.PersonasYJuridicos</class>
+		<class>com.siman.creditos.entity.orion.TCmaritalstatus</class>
+		<class>com.siman.creditos.entity.orion.TCnationalities</class>
+		<class>com.siman.creditos.entity.orion.TIsimcustomerpaymentsParams</class>
+		<class>com.siman.creditos.entity.orion.TCtproductContrato</class>
+		<class>com.siman.creditos.entity.orion.TCidentificationtype</class>
+		<class>com.siman.creditos.entity.orion.TCtproclientinterestrate</class>
+		<class>com.siman.creditos.entity.orion.TCclienttye</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCdiasProcesamiento</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCEsquemasdefinanciamiento</class>
+		
+		<class>com.siman.creditos.entity.orion.orionrepo.TIsimCustomerPaymentsParamsCA</class>
+		<class>com.siman.creditos.entity.orion.orionrepo.TcProductC</class>
+		<class>com.siman.creditos.entity.orion.orionrepo.TsaccountMasterSqftraC</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfEcPlantilla</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfCadena</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfCampana</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfEcEnvio</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfPais</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfEcMandril</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.ConfEcMandrilDetalle</class>
+		<class>com.siman.creditos.entity.orion.configuracionescorreo.TcriteriosNotiPremora</class>
+		
+		<!-- ARCHIVOS DE TRANSFORMACION Y ENVIO DE ORION A SISCARD -->
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoOrionAutoEncabezado</class>
+		<class>com.siman.creditos.entity.orion.cargaabonosaut.CaCargoOrionAutoDetalle</class>
+		
+		<!-- Catalogos contables orion -->
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCEstadosTipoMonto</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TCCuentasContables</class>
+		
+		<class>com.siman.creditos.entity.orion.visor.Customer</class>
+		<class>com.siman.creditos.entity.orion.visor.EstadoCuenta</class>
+		<class>com.siman.creditos.entity.orion.visor.EstadoCuentaPK</class>
+		
+		<!-- VSS Incoming -->
+		<class>com.siman.creditos.entity.vssincoming.TIsimIncBin</class>		
+		<class>com.siman.creditos.entity.vssincoming.TIsimIncAdquirientes</class>
+		<class>com.siman.creditos.entity.vssincoming.TIsimIncDatatransaccion</class>
+		<class>com.siman.creditos.entity.vssincoming.TIsimIncCarga</class>
+		
+		<!-- Mantenimientos Liquidación de comisiones  -->
+		<class>com.siman.creditos.entity.orion.contable_procesador.TBOrgParams</class>
+		<class>com.siman.creditos.entity.orion.contable_procesador.TBParamClient</class>
+		<class>com.siman.creditos.entity.orion.contable_procesador.TBIntfile</class>
+		<class>com.siman.creditos.entity.orion.contable_procesador.TBIntComision</class>
+		<class>com.siman.creditos.entity.orion.contable_procesador.TBLiquidacionCom</class>
+		
+	</persistence-unit>
+	
+	<persistence-unit name="oriondbcr" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.orion.planesPago.TCtproduct</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TPlan</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TPlansProduct</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TRelocatedPayment</class>	
+		<class>com.siman.creditos.entity.orion.planesPago.TCbranchoffice</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TGenSetting</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TScurrency</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcGestionPin</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcBranchOffices</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcGenSettings</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcBranchManagers</class>
+		<class>com.siman.creditos.entity.orion.visor.Customer</class>
+		<class>com.siman.creditos.entity.orion.visor.EstadoCuenta</class>
+		<class>com.siman.creditos.entity.orion.visor.EstadoCuentaPK</class>
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="oriondbgt" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.orion.visor.Customer</class>
+		<class>com.siman.creditos.entity.orion.visor.EstadoCuenta</class>
+		<class>com.siman.creditos.entity.orion.visor.EstadoCuentaPK</class>		
+		<class>com.siman.creditos.entity.orion.entities.TNcBranchOffices</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcGestionPin</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcGenSettings</class>
+		<class>com.siman.creditos.entity.orion.entities.TNcBranchManagers</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TCtproduct</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TPlan</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TPlansProduct</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TRelocatedPayment</class>	
+		<class>com.siman.creditos.entity.orion.planesPago.TCbranchoffice</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TGenSetting</class>
+		<class>com.siman.creditos.entity.orion.planesPago.TScurrency</class>
+		<class>com.siman.creditos.entity.orion.mttoGenerales.TIsimcustomerpaymentsParam</class>
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="migorat" transaction-type="RESOURCE_LOCAL">
+		<class>com.siman.creditos.entity.migorat.PersonalReferences</class>
+		<class>com.siman.creditos.entity.migorat.Evaluacion</class>
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	
+</persistence>
