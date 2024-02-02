@@ -33,6 +33,15 @@
 		</dependency>-->
 		<!-- Servlet Api -->
 		<dependency>
+    <groupId>javax.enterprise</groupId>
+    <artifactId>cdi-api</artifactId>
+    <version>2.0.SP1</version> <!-- O utiliza la última versión disponible -->
+    <scope>provided</scope>
+</dependency>
+
+
+
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>

@@ -6,6 +6,7 @@
 	<persistence-unit name="dealsdb" transaction-type="RESOURCE_LOCAL">
 	    <!-- <class>com.siman.creditos.entity.syssecur.TUser</class> -->
 	    <class>com.siman.creditos.entity.Role</class>
+		<!-- <class>com.siman.creditos.entity.User</class> -->
 	</persistence-unit>
 	
 	<persistence-unit name="simanadm" transaction-type="RESOURCE_LOCAL">
